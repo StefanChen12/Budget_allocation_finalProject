@@ -13,6 +13,7 @@ const Currency = () => {
         });
     }
 
+    // customize the single value component, after the user selects a currency, add a label "currency:" before the value
     const CustomSingleValue = ({ children, ...props }) => {
         return (
           <components.SingleValue {...props}>
