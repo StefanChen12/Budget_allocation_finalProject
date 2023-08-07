@@ -1,16 +1,49 @@
 import React from 'react';
+// import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import { AppProvider } from './context/AppContext';
-import CartValue from './components/CartValue';
+import Budget from './components/Budget';
+import Rmaining from './components/Remaining';
+import ExpenseTotal from './components/ExpenseTotal';
+import Currency from './components/Currency';
 import ExpenseList from './components/ExpenseList';
-import ItemSelected from './components/ItemSelected';
-import Location from './components/Location';
+import AllocationForm from './components/AllocationForm';
+
 
 function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+    return(
+          <AppProvider>
+              <div className='container'>
+                    <h1 className='mt-3'>Company's Budget Allocation</h1>
+                    <div className="row mt-3">
+                        <div className="col-sm">
+                            <Budget/>
+                        </div>
+                        <div className="col-sm">
+                            <Rmaining/>
+                        </div>
+                        <div className="col-sm">
+                            <ExpenseTotal/>
+                        </div>
+                            <Currency/>
+                    </div>
+
+                    <h3 className='mt-3'>Allocation</h3>
+                    <div className="row mt-3">
+                        <div className='col-sm'>
+                          <ExpenseList/>
+                        </div>
+                    </div>
+                    <h3 className="mt-3">Change Allocation</h3>
+                    <div className="row mt-3">
+                        <div className="col-sm">
+                            <AllocationForm/>
+                          </div>
+                    </div>
+
+              </div>
+          </AppProvider>
+      );
 }
 
 export default App;
